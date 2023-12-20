@@ -1,0 +1,40 @@
+ No. real individuals (genotyped or not)          20
+
+ No. genotyped individuals          20
+
+ No. virtual sires and dams
+
+
+ No. initial generations           3
+
+ No. loci          30
+
+ Max. No. alelles/loci          10
+
+ No. allowed mismatches (parentage, FS(HS) families, age)
+           3           3           0
+ Calculations took    17.7031250      seconds
+
+ Correlation between input and solution coancestry matrix
+  0.924292207    
+
+           1           0           0
+           2           0           0
+           3           0           0
+           4           0           0
+           5           3           4
+           6           3           4
+           7           3           4
+           8           3           5
+           9           6           5
+          10           6           5
+          11           6           5
+          12           3           5
+          13          10          11
+          14          10          11
+          15          12           5
+          16           0          14
+          17          13          14
+          18          13          14
+          19          17          16
+          20          12          18

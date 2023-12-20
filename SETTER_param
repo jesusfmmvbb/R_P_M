@@ -1,0 +1,34 @@
+100 ! Seed for random number generator
+20 0 ! No. genotyped and virtual individuals
+30 30 N ! Total no. markers, no. markers used for parentage compatibilities, all biallelic (S) or not (N)
+10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+1 4 ! Age of puberty and senescence
+3 3 0  ! No. allowed errors (tolerance) for compatibility of parentage, FS families and age
+100 100 100 ! Weight given to those errors
+100 100 100 100 ! Relative importance of fails in 1) known pa(ma)ternities; 2) known FS(HS) families; 3) banned parent-offspring relationship; 4) no reproductive individuals
+3 ! Initial no. generations to simulate
+0 ! Calculate the IBS molecular coancestry (0) or import a user defined matrix (1)
+0 ! Known relationships (1) or not (0)
+0 ! Known FS(HS) families (1) or not (0)
+0 ! Banned relationships (1) or not (0)
+0 ! Some individuals never reproducing (1) or no such information (0)
+1           7           1 ! Individual 1 sex (1-male/2-female), age (in years or months or whatever measure) and genotype status (1-genotyped/0-not genotyped)
+2           7           1
+1           6           1
+2           6           1
+2           5           1
+1           5           1
+2           5           1
+2           4           1
+1           4           1
+1           4           1
+2           4           1
+1           3           1
+1           3           1
+2           3           1
+1           2           1
+2           1           1
+1           1           1
+2           1           1
+1           0           1
+2           0           1
