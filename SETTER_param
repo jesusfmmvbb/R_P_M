@@ -1,6 +1,6 @@
 100 ! Seed for random number generator
 20 0 ! No. genotyped and virtual individuals
-30 30 N ! Total no. markers, no. markers used for parentage compatibilities, all biallelic (S) or not (N)
+30 30 N ! Total no. markers, no. markers used for parentage compatibilities, all biallelic (Y) or not (N)
 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
 1 4 ! Age of puberty and senescence
 3 3 0  ! No. allowed errors (tolerance) for compatibility of parentage, FS families and age
