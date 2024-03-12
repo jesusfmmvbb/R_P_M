@@ -49,7 +49,7 @@ read(55,*) nloci,salto,biallelic
 salto=nloci/salto
 allocate(nalel(nloci))
 select case (biallelic)
- case ('S')
+ case ('Y')
    nalel=2
  case ('N')
    read(55,*) (nalel(n),n=1,nloci)
@@ -199,21 +199,21 @@ print*,'calculating molecular coancestry'
 	  cont2=cont2+1
       loci:do l=1,nloci
         parmol=0
-        do k1=1,2
-          if(marcadores(k1,l,j).eq.0) then
+        if(marcadores(1,l,j)*marcadores(2,l,j).eq.0) then
+          comp(cont2,cont1)=comp(cont2,cont1)-1
+          comp(cont1,cont2)=comp(cont2,cont1)
+          parmol=0
+          cycle loci
+	    endif
+	    do k1=1,2
+          if(marcadores(1,l,i)*marcadores(2,l,i).eq.0) then
             comp(cont2,cont1)=comp(cont2,cont1)-1
-            comp(cont1,cont2)=comp(cont1,cont2)-1
+            comp(cont1,cont2)=comp(cont2,cont1)
             parmol=0
-	        cycle loci
+            cycle loci
 	      endif
           do k2=1,2
-            if(marcadores(k2,l,i).eq.0) then
-            comp(cont2,cont1)=comp(cont2,cont1)-1
-            comp(cont1,cont2)=comp(cont1,cont2)-1
-	          parmol=0
-	          cycle loci
-            endif
-            if(marcadores(k1,l,j).eq.marcadores(k2,l,i)) parmol=parmol+1
+           if(marcadores(k1,l,j).eq.marcadores(k2,l,i)) parmol=parmol+1
           enddo
         enddo
         fest(cont2,cont1)=fest(cont2,cont1)+parmol
@@ -246,6 +246,7 @@ print*,'molecular coancestry done'
 
 open(UNIT=55,FILE=trim(input)//'_coanc')
   do i=1,n_genot
+!print*,i
     read(55,*) fest(i,:)
   enddo
   close(55)
@@ -529,7 +530,7 @@ select case(inicial)
      enddo
    endif
 
- case('S') ! Lee la solucion inicial de un archivo
+ case('Y') ! Lee la solucion inicial de un archivo
    open(UNIT=55,FILE=trim(input)//'_initial')
    do i=1,nind
      read(55,*) n,sol(i,2:3)
@@ -634,7 +635,7 @@ enddo
 
 close(55)
 
-	  camb=1+(cambios*ivig/irep)
+	  camb=1+(cambios*(ivig-1)/irep)
         kt=kt*k
         ivig=0
 ! Bucle de repeticiones *
