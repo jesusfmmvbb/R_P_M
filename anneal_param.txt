@@ -1,6 +1,6 @@
-300
-1000
-1
-.1
-.9
-N
+300 ! Maximum no. of steps (‘temperatures’)
+10000 ! No. solutions proposed by step
+3 ! Initial no. changes performed to create each alternate solution 
+.001 ! Initial ‘temperature’
+.9 ! Rate of ‘cooling’
+Y ! Use a particular initial solution (Y) or not (N)
